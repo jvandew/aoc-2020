@@ -1,0 +1,7 @@
+[package]
+name = "aoc-2020"
+version = "0.1.0"
+authors = ["Jacob Van De Weert <vandeweertj@gmail.com>"]
+edition = "2018"
+
+[dependencies]
