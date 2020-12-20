@@ -14,8 +14,8 @@ fn main() -> Result<(), Box<dyn Error>> {
 
   let mut answer_opt = None;
   for line in lines {
-    let expense = line?.parse::<u32>()?;
-    let inverse_expense = 2020u32 - expense;
+    let expense = line?.parse::<i32>()?;
+    let inverse_expense = 2020 - expense;
 
     if expenses.contains(&inverse_expense) {
       answer_opt = Some(inverse_expense * expense);
