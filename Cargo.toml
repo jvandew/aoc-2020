@@ -5,3 +5,5 @@ authors = ["Jacob Van De Weert <vandeweertj@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+lazy_static = "1.4"
+regex = "1.4"
