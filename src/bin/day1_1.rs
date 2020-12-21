@@ -5,7 +5,7 @@ use std::io::{BufRead, BufReader};
 
 /* See https://adventofcode.com/2020/day/1 for details. */
 fn main() -> Result<(), Box<dyn Error>> {
-  let filename = "resources/day1_1/input.txt";
+  let filename = "resources/day1/input.txt";
 
   let mut expenses = HashSet::new();
 

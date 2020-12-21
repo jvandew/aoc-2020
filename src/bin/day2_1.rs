@@ -5,7 +5,7 @@ use std::io::{BufRead, BufReader};
 
 /* See https://adventofcode.com/2020/day/2 for details. */
 fn main() -> Result<(), Box<dyn Error>> {
-  let filename = "resources/day2_1/input.txt";
+  let filename = "resources/day2/input.txt";
 
   let file = File::open(filename)?;
   let lines = BufReader::new(file).lines();
