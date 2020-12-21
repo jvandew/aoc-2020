@@ -3,13 +3,13 @@ use std::error::Error;
 
 /* See https://adventofcode.com/2020/day/2 for details. */
 fn main() -> Result<(), Box<dyn Error>> {
-  runner::run(|policy_password| {
-    let occurances = policy_password
+  runner::run(|policy| {
+    let occurances = policy
       .password
       .chars()
-      .filter(|character| character == &policy_password.character)
+      .filter(|character| character == &policy.character)
       .count();
 
-    policy_password.min_times <= occurances && occurances <= policy_password.max_times
+    Ok(policy.min_times <= occurances && occurances <= policy.max_times)
   })
 }
