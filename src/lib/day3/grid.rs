@@ -6,6 +6,12 @@ const TREE_CHAR: char = '#';
 const EMPTY_CHAR: char = '.';
 
 #[derive(Debug)]
+pub struct Slope {
+  pub right: usize,
+  pub down: usize,
+}
+
+#[derive(Debug)]
 enum GridSquare {
   Empty,
   Tree,
@@ -50,14 +56,14 @@ impl Grid {
     Ok(Grid { rows })
   }
 
-  pub fn traverse_and_count_trees(&self, right_step: usize, down_step: usize) -> u32 {
+  pub fn traverse_and_count_trees(&self, slope: &Slope) -> u32 {
     let mut row = 0;
     let mut column = 0;
     let mut tree_count = 0;
 
-    while row < GRID_HEIGHT - down_step {
-      column = (column + right_step) % GRID_WIDTH;
-      row += down_step;
+    while row < GRID_HEIGHT - slope.down {
+      column = (column + slope.right) % GRID_WIDTH;
+      row += slope.down;
 
       match self.rows[row].squares[column] {
         GridSquare::Empty => (),
