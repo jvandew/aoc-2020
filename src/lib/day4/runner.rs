@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::error::Error;
 
 /* See https://adventofcode.com/2020/day/2 for details. */
-pub fn run<F: Fn(&HashMap<String, String>) -> Result<bool, String>>(
+pub fn run<F: Fn(&HashMap<String, String>) -> bool>(
   is_valid: F,
 ) -> Result<(), Box<dyn Error>> {
   let runner = FileInputRunner::new("resources/day4/input.txt")?;
@@ -15,7 +15,7 @@ pub fn run<F: Fn(&HashMap<String, String>) -> Result<bool, String>>(
           match line?.as_str() {
             "" => {
               let new_valid_count = {
-                if is_valid(&passport_fields)? {
+                if is_valid(&passport_fields) {
                   valid_count + 1
                 } else {
                   valid_count

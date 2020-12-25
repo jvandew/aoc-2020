@@ -6,5 +6,5 @@ use std::error::Error;
 fn main() -> Result<(), Box<dyn Error>> {
   // All we care about are required fields being present, which is checked at parse time.
   // If the type system says it's valid, it's valid.
-  runner::run(|fields| Ok(Passport::from_fields(fields).is_ok()))
+  runner::run(|fields| Passport::from_fields(fields).is_ok())
 }
