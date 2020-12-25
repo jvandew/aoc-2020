@@ -23,7 +23,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     }
 
     answer_opt
-      .ok_or("Answer not found".into())
+      .ok_or_else(|| "Answer not found".into())
       .map(|answer| println!("The answer is: {:?}", answer))
   })
 }
